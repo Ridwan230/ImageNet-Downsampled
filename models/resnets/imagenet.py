@@ -93,7 +93,7 @@ class ResNet(nn.Module):
         self.layer3 = self._make_layer(block, 256, layers[2], stride=2)
         self.layer4 = self._make_layer(block, 512, layers[3], stride=2)
 
-        self.fc = nn.Linear(512 * block.expansion, num_classes)
+        self.fc = nn.Linear(25088, num_classes)
 
         init.kaiming_normal_(self.fc.weight)
         for key in self.state_dict():
