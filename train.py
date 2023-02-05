@@ -190,7 +190,8 @@ def main():
     with open("dataset_stats.json", "r") as f:
         stats = json.load(f)[dir_name]
     print(stats)
-    root = os.path.join(args.data, dir_name)
+    #root = os.path.join(args.data, dir_name)
+    root="/kaggle/input/inet32combined/dataset"
     val_loader = get_dataloader(args.dataset, root, False, args.batch_size, args.workers, args.size, args.classes,
                                 **stats)
 
